@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BorrowedProvider } from './context/BorrowedContext.js';
+import { ReturnedProvider } from './context/ReturnedContext.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BorrowedProvider>
+      <ReturnedProvider>
+        <App />
+      </ReturnedProvider>
+    </BorrowedProvider>
   </React.StrictMode>
 );
 
